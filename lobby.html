@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>局外人 - 游戏大厅</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 大厅页面 -->
+        <div id="lobbyPage" class="page">
+            <h2>游戏大厅</h2>
+            <div class="lobby-controls">
+                <button id="createRoomBtn">创建房间</button>
+                <input type="text" id="roomCode" placeholder="输入房间号">
+                <button id="joinRoomBtn">加入房间</button>
+                <button id="logoutBtn">退出登录</button>
+            </div>
+            <div class="room-list">
+                <h3>可用房间</h3>
+                <ul id="roomList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 应用脚本 -->
+    <script type="module" src="./firebase/firebase.js"></script>
+    <script type="module" src="./components/lobby.js"></script>
+    <script type="module" src="./main.js"></script>
+</body>
+</html> 

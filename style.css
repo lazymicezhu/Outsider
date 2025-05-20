@@ -1,0 +1,836 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* 页面容器 */
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 登录页面 */
+#loginPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 大厅页面 */
+.lobby-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.room-list {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 游戏房间页面 */
+.room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.game-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+}
+
+.player-list {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.chat-area {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+#chatMessages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.chat-input-area input:focus {
+    outline: none;
+    border-color: #1890ff;
+    box-shadow: 0 0 0 2px rgba(24,144,255,0.2);
+}
+
+.chat-input-area button {
+    padding: 10px 20px;
+    background: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chat-input-area button:hover {
+    background: #40a9ff;
+}
+
+.chat-input-area button:disabled {
+    background: #d9d9d9;
+    cursor: not-allowed;
+}
+
+/* 按钮样式 */
+button {
+    padding: 10px 20px;
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #40a9ff;
+}
+
+button:disabled {
+    background-color: #d9d9d9;
+    cursor: not-allowed;
+}
+
+/* 投票区域 */
+#voteArea {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+#voteOptions {
+    list-style: none;
+    margin: 15px 0;
+}
+
+#voteOptions li {
+    padding: 10px;
+    margin: 5px 0;
+    background: #f5f5f5;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+#voteOptions li:hover {
+    background: #e6f7ff;
+}
+
+#voteOptions li.selected {
+    background: #e6f7ff;
+    border-color: #1890ff;
+    color: #1890ff;
+    font-weight: bold;
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+}
+
+/* 结果区域 */
+#resultArea {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+#resultContent {
+    text-align: center;
+}
+
+#resultContent h4 {
+    color: #1890ff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#resultContent p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.vote-details {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.vote-details h5 {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.vote-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.vote-details li {
+    padding: 8px;
+    margin: 5px 0;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .game-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .room-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .lobby-controls {
+        flex-direction: column;
+    }
+}
+
+/* 登录表单样式 */
+.form-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #666;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    color: #1890ff;
+    border-bottom-color: #1890ff;
+}
+
+.form-content {
+    display: none;
+}
+
+.form-content.active {
+    display: block;
+}
+
+.form-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-content button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-content button:hover {
+    background-color: #40a9ff;
+}
+
+/* 错误消息样式 */
+.error-message {
+    color: #ff4d4f;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* 玩家列表样式 */
+#playerList {
+    list-style: none;
+    padding: 0;
+}
+
+.player-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current-player {
+    background-color: #e6f7ff;
+    border-left: 3px solid #1890ff;
+}
+
+.player-name {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 超级管理员标记样式 */
+.player-name .super-admin-badge {
+    color: #faad14;
+    font-size: 1.2em;
+}
+
+/* 角色图标样式 */
+.player-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+}
+
+.player-status .role-icon {
+    font-size: 1.2em;
+}
+
+/* 房主标记样式 */
+.player-name .creator-badge {
+    color: #faad14;
+    font-size: 1.2em;
+}
+
+/* 管理员功能样式 */
+.admin-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.admin-btn {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.admin-btn:hover {
+    background-color: #ff7875;
+}
+
+.kick-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.kick-button:hover {
+    background-color: #ff7875;
+}
+
+/* 计时器样式 */
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1890ff;
+    background-color: #e6f7ff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* 教程模态框样式 */
+.tutorial-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.tutorial-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.tutorial-content h2 {
+    color: #1890ff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.tutorial-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.tutorial-step {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #1890ff;
+}
+
+.tutorial-step h3 {
+    color: #1890ff;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.tutorial-step p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.tutorial-step ul, .tutorial-step ol {
+    margin-left: 20px;
+    line-height: 1.8;
+}
+
+.tutorial-step li {
+    margin-bottom: 8px;
+}
+
+.tutorial-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.tutorial-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tutorial-btn:not(.secondary) {
+    background-color: #1890ff;
+    color: white;
+    border: none;
+}
+
+.tutorial-btn:not(.secondary):hover {
+    background-color: #40a9ff;
+}
+
+.tutorial-btn.secondary {
+    background-color: #f5f5f5;
+    color: #666;
+    border: 1px solid #d9d9d9;
+}
+
+.tutorial-btn.secondary:hover {
+    background-color: #e6e6e6;
+    border-color: #d9d9d9;
+}
+
+/* 局外人能力样式 */
+.outsider-abilities {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.outsider-abilities h4 {
+    color: #1890ff;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.ability-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ability-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+}
+
+.ability-name {
+    font-weight: bold;
+    color: #1890ff;
+}
+
+.ability-uses {
+    color: #666;
+    font-size: 12px;
+}
+
+.use-ability-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+    background: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.use-ability-btn:disabled {
+    background: #d9d9d9;
+    cursor: not-allowed;
+}
+
+/* 模态框样式 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 300px;
+    max-width: 90%;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+    color: #1890ff;
+}
+
+.modal-content textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal .player-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.modal .player-list button {
+    width: 100%;
+    text-align: left;
+    padding: 8px;
+    background: #f5f5f5;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal .player-list button:hover {
+    background: #e6f7ff;
+    border-color: #1890ff;
+}
+
+/* 消息样式 */
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.message:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.message-sender {
+    font-weight: bold;
+    color: #1890ff;
+    margin-right: 10px;
+    font-style: italic;
+}
+
+.message-time {
+    color: #999;
+    font-size: 12px;
+}
+
+.message-content {
+    margin-top: 5px;
+    word-break: break-word;
+    line-height: 1.5;
+}
+
+/* 局外人消息样式 */
+.message.outsider {
+    background: #fff7e6;
+    border-left: 3px solid #faad14;
+}
+
+.message.outsider .message-sender {
+    color: #faad14;
+}
+
+/* 匿名消息样式 */
+.message.anonymous {
+    background: #f5f5f5;
+    border-left: 3px solid #722ed1;
+}
+
+.message.anonymous .message-sender {
+    color: #722ed1;
+    font-style: italic;
+}
+
+/* 隐藏状态样式 */
+.player-item.hidden {
+    opacity: 0.5;
+}
+
+.player-item.hidden .player-name {
+    color: #999;
+}
+
+/* 局外人剩余发言次数提示 */
+.remaining-messages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #fff7e6;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: #faad14;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #faad14;
+    box-shadow: 0 2px 8px rgba(250, 173, 20, 0.2);
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(250, 173, 20, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(250, 173, 20, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(250, 173, 20, 0.2);
+    }
+}
+
+/* 系统消息样式 */
+.message.system {
+    background: #f5f5f5;
+    border-left: 3px solid #1890ff;
+    color: #666;
+    font-style: italic;
+}
+
+.message.system .message-content {
+    color: #1890ff;
+}
+
+/* 禁用状态的输入框和按钮 */
+.chat-input-area input:disabled,
+.chat-input-area button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* 玩家状态标记 */
+.badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.badge.super-admin {
+    background-color: #ffd700;
+    color: #000;
+}
+
+.badge.ready {
+    background-color: #52c41a;
+    color: white;
+}
+
+/* 开始游戏按钮 */
+#startGameBtn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #1890ff;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#startGameBtn:disabled {
+    background-color: #d9d9d9;
+    cursor: not-allowed;
+}
+
+#startGameBtn:not(:disabled):hover {
+    background-color: #40a9ff;
+}
+
+/* 玩家列表项 */
+.player-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin: 4px 0;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.player-item.current-player {
+    background-color: #e6f7ff;
+}
+
+.player-name {
+    flex: 1;
+    margin-right: 8px;
+}
+
+.kick-btn {
+    padding: 4px 8px;
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.kick-btn:hover {
+    background-color: #ff7875;
+} 

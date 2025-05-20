@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>局外人 - 游戏房间</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 游戏房间页面 -->
+        <div id="gameRoomPage" class="page">
+            <div class="room-header">
+                <h2 id="roomTheme">房间主题</h2>
+                <div id="playerCount">玩家数: 0/10</div>
+                <div id="timer">剩余时间: 5:00</div>
+            </div>
+            
+            <div class="game-content">
+                <div class="player-list">
+                    <h3>玩家列表</h3>
+                    <ul id="playerList"></ul>
+                </div>
+
+                <div class="chat-area">
+                    <div id="chatMessages"></div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chatInput" placeholder="输入发言...">
+                        <button id="sendMessageBtn">发送</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="voteArea" class="hidden">
+                <h3>投票阶段</h3>
+                <p>请选择你认为的局外人：</p>
+                <ul id="voteOptions"></ul>
+                <button id="submitVoteBtn">提交投票</button>
+            </div>
+
+            <div id="resultArea" class="hidden">
+                <h3>游戏结果</h3>
+                <div id="resultContent"></div>
+                <button id="backToLobbyBtn">返回大厅</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 应用脚本 -->
+    <script type="module" src="./firebase/firebase.js"></script>
+    <script type="module" src="./components/room.js"></script>
+    <script type="module" src="./components/chat.js"></script>
+    <script type="module" src="./components/vote.js"></script>
+    <script type="module" src="./components/result.js"></script>
+    <script type="module" src="./main.js"></script>
+</body>
+</html> 

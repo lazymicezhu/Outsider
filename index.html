@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>局外人游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 登录页面 -->
+        <div id="loginPage" class="page">
+            <h1>局外人游戏</h1>
+            <div class="login-form">
+                <div class="form-tabs">
+                    <button class="tab-btn active" data-tab="login">登录</button>
+                    <button class="tab-btn" data-tab="register">注册</button>
+                </div>
+                
+                <!-- 登录表单 -->
+                <form id="loginForm" class="form-content active">
+                    <input type="email" id="loginEmail" placeholder="邮箱地址" required>
+                    <input type="password" id="loginPassword" placeholder="密码" required>
+                    <button type="submit">登录</button>
+                </form>
+                
+                <!-- 注册表单 -->
+                <form id="registerForm" class="form-content">
+                    <input type="text" id="registerName" placeholder="游戏昵称" required>
+                    <input type="email" id="registerEmail" placeholder="邮箱地址" required>
+                    <input type="password" id="registerPassword" placeholder="密码" required>
+                    <input type="password" id="confirmPassword" placeholder="确认密码" required>
+                    <button type="submit">注册</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 大厅页面 -->
+        <div id="lobbyPage" class="page hidden">
+            <h2>游戏大厅</h2>
+            <div class="lobby-controls">
+                <button onclick="createRoom()">创建房间</button>
+                <input type="text" id="roomCode" placeholder="输入房间号">
+                <button onclick="joinRoom()">加入房间</button>
+            </div>
+            <div class="room-list">
+                <h3>可用房间</h3>
+                <ul id="roomList"></ul>
+            </div>
+        </div>
+
+        <!-- 游戏房间页面 -->
+        <div id="gameRoomPage" class="page hidden">
+            <div class="room-header">
+                <h2 id="roomTheme">房间主题</h2>
+                <div id="playerCount">玩家数: 0/10</div>
+                <div id="timer">剩余时间: 5:00</div>
+            </div>
+            
+            <div class="game-content">
+                <div class="player-list">
+                    <h3>玩家列表</h3>
+                    <ul id="playerList"></ul>
+                </div>
+
+                <div class="chat-area">
+                    <div id="chatMessages"></div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chatInput" placeholder="输入发言...">
+                        <button onclick="sendMessage()">发送</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="voteArea" class="hidden">
+                <h3>投票阶段</h3>
+                <p>请选择你认为的局外人：</p>
+                <ul id="voteOptions"></ul>
+                <button onclick="submitVote()">提交投票</button>
+            </div>
+
+            <div id="resultArea" class="hidden">
+                <h3>游戏结果</h3>
+                <div id="resultContent"></div>
+                <button onclick="backToLobby()">返回大厅</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 应用脚本 -->
+    <script type="module" src="./firebase/firebase.js"></script>
+    <script type="module" src="./components/lobby.js"></script>
+    <script type="module" src="./components/room.js"></script>
+    <script type="module" src="./components/chat.js"></script>
+    <script type="module" src="./components/vote.js"></script>
+    <script type="module" src="./components/result.js"></script>
+    <script type="module" src="./components/tutorial.js"></script>
+    <script type="module" src="./main.js"></script>
+</body>
+</html> 
